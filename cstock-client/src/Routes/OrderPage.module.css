@@ -1,0 +1,16 @@
+.container{
+    width: 100%;
+    max-width: 670px;
+}
+
+.orderImg{
+    width: 100%;
+    max-width: 90px;
+}
+
+.orderBox{
+    list-style: none;
+    margin: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(114, 113, 113);
+}

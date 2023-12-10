@@ -1,0 +1,59 @@
+main{
+    margin-top: 4rem;
+}
+
+.bookAbout{
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+.imgContainer{
+    border-right: 2px solid rgb(206, 200, 200);
+}
+
+.author{
+    text-decoration: none;
+    color: #332D2D;
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+.authorSpan{
+    max-width: 270px;
+}
+
+.authorNote{
+    color: rgb(141, 19, 19);
+    font-weight: bold;
+    margin-left: 50px;
+    transition: all .2s ease-in;
+}
+
+
+.btn{
+    background-color: #332D2D;
+    border: none;
+    margin-right: 1rem;
+    transition: all .3s ease-in;
+}
+
+.btn:hover{
+    background-color: #635f5f;
+    color: white;
+    cursor: pointer;
+}
+
+.readBtn{
+    font-size: .8rem;
+    border: 1px solid #332D2D;
+    border-radius: 5px;
+    transition: all .3s ease-in;
+}
+
+.readBtn:hover{
+    background-color: #635f5f;
+    color: white;
+    cursor: pointer;
+}

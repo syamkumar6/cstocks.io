@@ -1,0 +1,12 @@
+main{
+    height: 100%;
+    min-height: 90vh;
+    margin-top: 4rem;
+}
+
+.personImg{
+    width: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    border-radius: 30%;
+}

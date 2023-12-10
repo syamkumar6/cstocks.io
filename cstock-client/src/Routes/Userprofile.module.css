@@ -1,0 +1,23 @@
+.navBox{
+    transition: all .3s ease;
+}
+
+.navBox:hover{
+    background-color: rgb(221, 217, 217);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.logoutBtn{
+    background-color: rgb(165, 10, 10);
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    transition: all .3s ease;
+}
+
+.logoutBtn:hover{
+    background-color: rgb(206, 15, 15);
+}

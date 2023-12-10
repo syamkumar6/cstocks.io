@@ -1,0 +1,14 @@
+.carousel{
+    margin-top: 4rem;
+}
+
+.carouselItem{
+    height: 100%;
+    max-height: 470px;
+}
+
+.carouselItem img{
+    max-height: 470px;
+    object-fit: cover;
+    object-position: center;
+}

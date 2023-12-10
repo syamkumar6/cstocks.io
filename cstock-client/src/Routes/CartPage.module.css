@@ -1,0 +1,21 @@
+.Ecart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.clearBtn{
+    border:1px solid ;
+    border-radius: 3px;
+    background-color: white;
+    color: rgb(231, 18, 18);
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+.clearBtn:hover{
+    background-color: rgb(231, 22, 22);
+    color: white;
+}

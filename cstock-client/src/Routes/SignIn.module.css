@@ -1,0 +1,33 @@
+.formCol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondformCol{
+    margin: 0 1rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signUpImg{
+    width: 100%;
+    max-width: 370px;
+    max-height: 300px;
+}
+
+.navLink{
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #332D2D;
+    color: white;
+    padding: .4rem 1rem;
+    transition: all .3s ease;
+}
+
+.navLink:hover{
+    background-color: #494848;
+    cursor: pointer;
+}

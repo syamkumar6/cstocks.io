@@ -1,0 +1,36 @@
+.SidebarLabelContainer{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: .3rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    gap: 1rem;
+}
+
+.SidebarLabelContainer input{
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+}
+
+.ckeckmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: azure;
+    border-radius: 50%;
+}
+
+.SidebarLabelContainer:hover input~.ckeckmark{
+    background-color: #ccc;
+}
+
+.SidebarLabelContainer input:checked~.ckeckmark{
+    background-color:rgb(58, 57, 57);
+}

@@ -1,0 +1,51 @@
+.container{
+    margin: 1rem auto;
+}
+.cardList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 1rem;
+}
+
+.viewButton{
+    
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #332D2D;
+    color: white;
+    font-weight: 600;
+    padding: .4rem .6rem;
+    transition: all .3s ease-in;
+}
+
+.viewButton:hover{
+    background-color: #696565;
+    cursor: pointer;
+
+}
+
+.authorBox{
+    color: #332D2D;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    transition: all .5s ease;
+}
+
+.authorBox:hover{
+    
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.authorImg{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}

@@ -1,0 +1,79 @@
+.inputBox{
+    position: relative;
+    width: 250px;
+    margin-top: 1rem;
+}
+
+
+.formInput{
+    width: 100%;
+    margin: 2.5px 0;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+    transition: 0.5s;
+
+}
+
+.formLabel{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #332D2D;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+}
+
+.formInput:valid ~ .formLabel,
+.formInput:focus ~ .formLabel{
+    color: black;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    letter-spacing: 0.2em;
+}
+
+.formInput:valid,
+.formInput:focus{
+    border: 1px solid rgb(85, 82, 82);
+}
+
+.error{
+    position: absolute;
+    margin: 0;
+    font-size: small;
+    color: rgb(194, 12, 12);
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.Link{
+    align-self: flex-end;
+    margin: .6rem 0;
+    font-size: small;
+}
+
+.submitBtn{
+    background-color: #332D2D;
+    color: white;
+    align-self: flex-end;
+    width: 50%;
+    border: none;
+    margin-top: 1.3rem;
+    padding: .3rem ;
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.submitBtn:hover{
+    background-color: #494747;
+    cursor: pointer;
+}
