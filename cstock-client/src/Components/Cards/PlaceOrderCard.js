@@ -27,7 +27,8 @@ function PlaceOrderCard({ carts, totalPrice }) {
       userId: user.id
     }
     const headers = {
-      "Content-Type":"application/json"
+      "Content-Type":"application/json",
+      credentials: "include",
     }
     const response = await fetch(`${baseURL}/create-checkout-session`,{
       method:"POST",
