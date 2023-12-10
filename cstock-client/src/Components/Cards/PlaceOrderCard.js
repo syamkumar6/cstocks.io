@@ -4,6 +4,8 @@ import {loadStripe} from '@stripe/stripe-js';
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function PlaceOrderCard({ carts, totalPrice }) {
+  const baseURL = process.env.REACT_APP_BASE_URL
+  const STRIPE_KEY = process.env.STRIPE_KEY
   const user = useSelector((state) => state.auth.userdata)
   const stripeCart = carts.map((cart)=> {
      return {
@@ -18,7 +20,7 @@ function PlaceOrderCard({ carts, totalPrice }) {
 //* Stripe checkout session
 
   const Makepayment = async() => {
-    const stripe = await loadStripe("pk_test_51OAAOASFQwpcGAJ8SpwclfoIvL35iOygiV4zpqBR9iJdHlcFwcCDY4tijf1mVaSKdVfKG1wp25hEQz0tEb8Wis5c005COTxi15")
+    const stripe = await loadStripe(STRIPE_KEY)
 
     const body = {
       products:stripeCart,
@@ -27,7 +29,7 @@ function PlaceOrderCard({ carts, totalPrice }) {
     const headers = {
       "Content-Type":"application/json"
     }
-    const response = await fetch("http://localhost:3000/create-checkout-session",{
+    const response = await fetch(`${baseURL}/create-checkout-session`,{
       method:"POST",
       headers:headers,
       body:JSON.stringify(body)
