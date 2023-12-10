@@ -19,7 +19,7 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://cstocks-io.vercel.app"],
+    origin: ["https://cstocks-io-syam-kumars-projects.vercel.app"],
     methods: ["POST, GET"],
     credentials: true,
   })
