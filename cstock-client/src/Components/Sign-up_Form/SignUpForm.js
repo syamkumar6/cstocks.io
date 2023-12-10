@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import { signUpSchema } from "../../UserSchemas/signUpSchema";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const baseURL = process.env.REACT_APP_BASE_URL
 
@@ -26,7 +27,7 @@ function SignUpForm() {
     axios.post(`${baseURL}/users/signup`,({values}))
     .then(res => {
       console.log(res)
-      alert('Successfully signed up!')
+      toast.success('Successfully signed up!')
       navigate('/login')
     })
     .catch(err => {
