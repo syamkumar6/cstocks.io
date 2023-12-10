@@ -6,7 +6,6 @@ import Homepagecarousel from "../Components/Carousels/Homepagecarousel";
 import BookCard from "../Components/Cards/Bookcard";
 import { Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { addBooks } from "../ReduxStore/BookSlice";
 import { loginStatus, addUser } from "../ReduxStore/UserSlice";
 
@@ -65,26 +64,6 @@ function Homepage(props) {
           <Link to={'/books'} className={styles.viewButton}>View More..</Link>
           </div>
           
-        </Container>
-      </section>
-
-      <section>
-        <Container>
-          <h1>Top authors</h1>
-
-          <ul className="d-flex flex-row flex-wrap gap-4 m-4 list-unstyled">
-            {
-              authors.map((author,index) => {
-                if (index < 5)
-                return <li>
-                  <Link to={"/authors/" +author._id} className={styles.authorBox}>
-                     <img src={author.image} alt="" className={styles.authorImg} />
-                     <h6>{author.name}</h6>
-                  </Link>
-                </li>
-              })
-            }
-          </ul>
         </Container>
       </section>
     </main>
