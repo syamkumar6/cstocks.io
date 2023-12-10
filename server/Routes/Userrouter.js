@@ -38,7 +38,7 @@ router.post("/login", async (req, res, next) => {
           process.env.JWT_SECRET,
           { expiresIn: "1d" }
         );
-        res.cookie('token', token);
+        res.cookie('token', token, { sameSite: 'None', secure: true });
         return res.json({ Status: "Success" });
       }
     }
