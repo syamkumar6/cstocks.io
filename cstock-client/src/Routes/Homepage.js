@@ -10,14 +10,14 @@ import { useState } from "react";
 import { addBooks } from "../ReduxStore/BookSlice";
 import { loginStatus, addUser } from "../ReduxStore/UserSlice";
 
-const baseURL = process.env.REACT_APP_BASE_URL;
+const baseURL = process.env.REACT_APP_BASE_URL
 
 export async function loader() {
-  const res = await axios.get("http://localhost:3000/books");
+  const res = await axios.get(`${baseURL}/books`);
   const books = res.data;
-  const Carousel_res = await axios.get("http://localhost:3000/carousels");
+  const Carousel_res = await axios.get(`${baseURL}/carousels`);
   const carousels = Carousel_res.data;
-  const authres = await axios.get("http://localhost:3000/persons");
+  const authres = await axios.get(`${baseURL}/persons`);
   const authors = authres.data;
   return { books, carousels, authors };
 }
