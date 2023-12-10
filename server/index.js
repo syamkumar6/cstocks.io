@@ -13,13 +13,13 @@ const Checkoutrouter = require("./Routes/Checkoutrouter")
 const Orderrouter = require("./Routes/Orderrouter")
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000
 
 app.use(cookieParses());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://cstocks-io.vercel.app","http://localhost:3001"],
+    origin: ["https://cstocks-io.vercel.app"],
     methods: ["POST, GET"],
     credentials: true,
   })
