@@ -5,7 +5,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function PlaceOrderCard({ carts, totalPrice }) {
   const baseURL = process.env.REACT_APP_BASE_URL
-  const STRIPE_KEY = process.env.STRIPE_KEY
+  const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY
   const user = useSelector((state) => state.auth.userdata)
   const stripeCart = carts.map((cart)=> {
      return {
