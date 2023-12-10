@@ -74,15 +74,16 @@ function Homepage(props) {
 
           <ul className="d-flex flex-row flex-wrap gap-4 m-4 list-unstyled">
             {
-              authors.map((author,index) => {
-                if (index < 5)
-                return <li>
-                  <Link to={"/authors/" +author._id} className={styles.authorBox}>
-                     <img src={author.image} alt="" className={styles.authorImg} />
-                     <h6>{author.name}</h6>
-                  </Link>
-                </li>
-              })
+              authors.map((author, index) => (
+                  index < 5 && (
+                    <li key={author._id}>
+                      <Link to={"/authors/" + author._id} className={styles.authorBox}>
+                        <img src={author.image} alt="" className={styles.authorImg} />
+                        <h6>{author.name}</h6>
+                      </Link>
+                    </li>
+                  )
+                ))
             }
           </ul>
         </Container>
