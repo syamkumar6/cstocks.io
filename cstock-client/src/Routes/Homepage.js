@@ -26,7 +26,7 @@ function Homepage(props) {
   const dispatch = useDispatch()
   const { books, carousels, authors } = useLoaderData();
   const Books = useSelector(state =>state.books)
-
+  console.log(authors)
   axios.defaults.withCredentials = true
   useEffect(() => {
       axios.get(`${baseURL}/users/verify`)
