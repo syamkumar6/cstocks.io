@@ -73,7 +73,7 @@ function Homepage(props) {
           <h1>Top authors</h1>
 
           <ul className="d-flex flex-row flex-wrap gap-4 m-4 list-unstyled">
-            {
+            {console.log(authors);
               authors.map((author, index) => (
                   index < 5 && (
                     <li key={author._id}>
