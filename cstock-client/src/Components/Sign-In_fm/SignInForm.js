@@ -35,10 +35,10 @@ function SignInForm() {
               toast.success("Login Successful")
               navigate('/')
             }else{
-              alert(res.data.Password)
+              toast.error(res.data.Password)
             }
           }else{
-            alert(res.data.Message)
+            toast.error(res.data.Message)
           }
         })
         .catch(err => {
