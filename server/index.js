@@ -47,7 +47,13 @@ async function main() {
   const db = process.env.DB_URL;
   const urlwithpass = db.replace("<password>", process.env.DB_PASS);
 
-  await mongoose.connect(urlwithpass);
+  await mongoose.connect(urlwithpass, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB Atlas');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB Atlas:', error);
+  });
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
