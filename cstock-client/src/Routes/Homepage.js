@@ -1,10 +1,10 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { Link, useLoaderData } from "react-router-dom";
 import Homepagecarousel from "../Components/Carousels/Homepagecarousel";
 import BookCard from "../Components/Cards/Bookcard";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addBooks } from "../ReduxStore/BookSlice";
 import { loginStatus, addUser } from "../ReduxStore/UserSlice";
@@ -25,7 +25,9 @@ function Homepage(props) {
   const dispatch = useDispatch()
   const { books, carousels, authors } = useLoaderData();
   const Books = useSelector(state =>state.books)
-  console.log(authors)
+  const [loading, setLoading] = useState(true);
+
+  
   axios.defaults.withCredentials = true
   useEffect(() => {
       axios.get(`${baseURL}/users/verify`)
@@ -42,6 +44,7 @@ function Homepage(props) {
 
   useEffect(()=>{
     dispatch(addBooks(books))
+    setLoading(false);
   },[])
 
   return (
@@ -51,20 +54,27 @@ function Homepage(props) {
       </section>
 
       <section>
-        <Container className={styles.container}>
-          <h1>Popular books of 2023</h1>
-          <ul className="d-flex flex-row flex-wrap gap-4 m-4 list-unstyled">
-            {Books.Allbooks.map((book, index) => {
-              if (index < 10) {
-                return (<BookCard book={book} books ={Books.Allbooks}/>)
-              }
-            })}
-          </ul>
-          <div className="d-flex justify-content-end">
-          <Link to={'/books'} className={styles.viewButton}>View More..</Link>
-          </div>
-          
-        </Container>
+        {loading ? ( // Conditionally render spinner while loading
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : (
+          <Container className={styles.container}>
+            <h1>Popular books of 2024</h1>
+            <ul className="d-flex align-items-center flex-md-wrap flex-md-row flex-column   gap-4 m-4 list-unstyled">
+              {Books.Allbooks.map((book, index) => {
+                if (index < 10) {
+                  return <BookCard book={book} books={Books.Allbooks} />;
+                }
+              })}
+            </ul>
+            <div className="d-flex justify-content-end">
+              <Link to={"/books"} className={styles.viewButton}>
+                View More..
+              </Link>
+            </div>
+          </Container>
+        )}
       </section>
     </main>
   );
