@@ -20,7 +20,7 @@ function PlaceOrderCard({ carts, totalPrice }) {
 //* Stripe checkout session
 
   const Makepayment = async() => {
-    const stripe = await loadStripe(STRIPE_KEY)
+    const stripe = await loadStripe("pk_test_51OAAOASFQwpcGAJ8SpwclfoIvL35iOygiV4zpqBR9iJdHlcFwcCDY4tijf1mVaSKdVfKG1wp25hEQz0tEb8Wis5c005COTxi15")
 
     const body = {
       products:stripeCart,
@@ -30,6 +30,7 @@ function PlaceOrderCard({ carts, totalPrice }) {
       "Content-Type":"application/json",
       credentials: "include",
     }
+    console.log("hi")
     const response = await fetch(`${baseURL}/create-checkout-session`,{
       method:"POST",
       headers:headers,
